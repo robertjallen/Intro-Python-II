@@ -11,4 +11,4 @@ class Room:
     self.w_to = None
 
   def __str__(self):
-    return f'your in {self.description}'  
+    return f'your in {self.name} {self.description}'  
