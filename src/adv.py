@@ -53,8 +53,7 @@ while True:
         break
     if player_input == 's':
         player = Player(name, room['foyer'])
-        print(f' {name} are now in {player.current_room}')
-        break
+        # print(f' {name} are now in {player.current_room}')
     else:
         print("You cannot go in that direction, please choose another direction")
 
