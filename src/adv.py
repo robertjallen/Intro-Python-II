@@ -46,7 +46,7 @@ while True:
 
     print(f'{player} You are in {player.current_room.name} {player.current_room.description} !')
     player_input = input(
-        f'Please choose which direction you would like to go: [s] for south, [n] for north, [e] for east, [w] for west, or choose [q] to quit game: ')
+        f'Please choose which direction you would like to go \n [s] for SOUTH \n [n] for NORTH \n [e] for EAST \n [w] for WEST \n [q] to QUIT GAME \n :')
 
     if player_input == 'q':
         print("Thank you for playing")
