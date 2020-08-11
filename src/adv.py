@@ -43,21 +43,24 @@ player = Player(name, room['outside'])
 
 # Write a loop that:
 while True:
-    
 
-    print(player)
+    print(f'{player} You are in {player.current_room.name} {player.current_room.description} !')
+    player_input = input(
+        f'Please choose which direction you would like to go: [s] for south, [n] for north, [e] for east, [w] for west, or choose [q] to quit game: ')
 
-    player_input = input(f'input: ')
     if player_input == 'q':
-        print(f"thank you good bye")
+        print("Thank you for playing")
         break
+    if player_input in {'n', 's', 'e', 'w'}:
+        if hasattr(player.current_room, f'{player_input}_to'):
+            player.current_room = getattr(
+                player.current_room, f'{player_input}_to')
+            print(f' You are now in {player.current_room}')
+    else:
+        print("You cannot go in that direction, please choose another direction")
 
-
-# * Prints the current room name
-# * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
-#
-# If the user enters a cardinal direction, attempt to move to the room there.
-# Print an error message if the movement isn't allowed.
-#
-# If the user enters "q", quit the game.
+        #
+        # If the user enters a cardinal direction, attempt to move to the room there.
+        # Print an error message if the movement isn't allowed.
+        #
+        # If the user enters "q", quit the game.
