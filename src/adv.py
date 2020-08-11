@@ -51,11 +51,9 @@ while True:
     if player_input == 'q':
         print("Thank you for playing")
         break
-    if player_input in {'n', 's', 'e', 'w'}:
-        if hasattr(player.current_room, f'{player_input}_to'):
-            player.current_room = getattr(
-                player.current_room, f'{player_input}_to')
-            print(f' You are now in {player.current_room}')
+    if player_input == 's':
+        # Player(name, room['foyer'])
+        print(f' You are now in {player.current_room}')
     else:
         print("You cannot go in that direction, please choose another direction")
 
