@@ -49,6 +49,7 @@ while True:
         f'Please choose which direction you would like to go \n [s] for SOUTH \n [n] for NORTH \n [e] for EAST \n [w] for WEST \n [q] to QUIT GAME \n :')
 
     if location == 'q':
+        print('thank you for playing')
         break
     elif location == 'n':
         if hasattr(player.location, 'n_to'):
