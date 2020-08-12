@@ -44,18 +44,34 @@ player = Player(name, room['outside'])
 # Write a loop that:
 while True:
 
-    print(f'{player} You are in {player.current_room.name} {player.current_room.description} !')
-    player_input = input(
+    print(f'{player} You are in {player.location.name} {player.location.description} !')
+    location = input(
         f'Please choose which direction you would like to go \n [s] for SOUTH \n [n] for NORTH \n [e] for EAST \n [w] for WEST \n [q] to QUIT GAME \n :')
 
-    if player_input == 'q':
-        print("Thank you for playing")
+    if location == 'q':
         break
-    if player_input == 's':
-        player = Player(name, room['foyer'])
-        # print(f' {name} are now in {player.current_room}')
+    elif location == 'n':
+        if hasattr(player.location, 'n_to'):
+            player.location = player.location.n_to
+        else:
+            print('you cannot go there')
+    elif location == 'south':
+        if hasattr(player.location, 's_to'):
+            player.location = player.location.s_to
+        else:
+            print('you cannot go there')
+    elif location == 'e':
+        if hasattr(player.location, 'e_to'):
+            player.location = player.location.e_to
+        else:
+            print('you cannot go there')
+    elif location == 'w':
+        if hasattr(player.location, 'w_to'):
+            player.location = player.location.w_to
+        else:
+            print('you cannot go there')
     else:
-        print("You cannot go in that direction, please choose another direction")
+        print('you cannot go there')
 
         #
         # If the user enters a cardinal direction, attempt to move to the room there.

@@ -2,9 +2,9 @@
 # currently.
 
 class Player:
-  def __init__(self, name, current_room):
+  def __init__(self, name, location):
     self.name = name
-    self.current_room = current_room
+    self.location = location
 
   def __str__(self):
     return f'{self.name}'  
