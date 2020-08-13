@@ -53,24 +53,24 @@ while True:
         break
     elif location == 'n':
         if hasattr(player.location, 'n_to'):
-            player.location = player.location.n_to
+            player.location = player.location.n_to    
         else:
             print('you cannot go there')
-    elif location == 'south':
-        if hasattr(player.location, 's_to'):
-            player.location = player.location.s_to
-        else:
-            print('you cannot go there')
-    elif location == 'e':
-        if hasattr(player.location, 'e_to'):
-            player.location = player.location.e_to
-        else:
-            print('you cannot go there')
-    elif location == 'w':
-        if hasattr(player.location, 'w_to'):
-            player.location = player.location.w_to
-        else:
-            print('you cannot go there')
+        if location == 's':
+            if hasattr(player.location, 's_to'):
+                player.location = player.location.s_to
+            else:
+                print('you cannot go there')
+        elif location == 'e':
+            if hasattr(player.location, 'e_to'):
+                player.location = player.location.e_to
+            else:
+                print('you cannot go there')
+        elif location == 'w':
+            if hasattr(player.location, 'w_to'):
+                player.location = player.location.w_to
+            else:
+                print('you cannot go there')
     else:
         print('you cannot go there')
 
