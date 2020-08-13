@@ -24,9 +24,9 @@ earlier adventurers. The only exit is to the south."""),
 
 # Link rooms together
 
-room['outside'].n_to = room['foyer']
-room['foyer'].s_to = room['outside']
-room['foyer'].n_to = room['overlook']
+room['outside'].n_to = room['foyer'] #goes from outside to foyer
+room['foyer'].s_to = room['outside'] #goes from foyer to outside
+room['foyer'].n_to = room['overlook'] #goes from the foyer to the overlook
 room['foyer'].e_to = room['narrow']
 room['overlook'].s_to = room['foyer']
 room['narrow'].w_to = room['foyer']
@@ -53,24 +53,17 @@ while True:
         break
     elif location == 'n':
         if hasattr(player.location, 'n_to'):
-            player.location = player.location.n_to    
+            player.location = player.location.n_to
+    elif location == 's':
+        if hasattr(player.location, 's_to'):
+            player.location = player.location.s_to
         else:
             print('you cannot go there')
-        if location == 's':
-            if hasattr(player.location, 's_to'):
-                player.location = player.location.s_to
-            else:
-                print('you cannot go there')
-        elif location == 'e':
-            if hasattr(player.location, 'e_to'):
-                player.location = player.location.e_to
-            else:
-                print('you cannot go there')
-        elif location == 'w':
-            if hasattr(player.location, 'w_to'):
-                player.location = player.location.w_to
-            else:
-                print('you cannot go there')
+    elif location == 'w':
+        if hasattr(player.location, 'w_to'):
+            player.location = player.location.w_to
+        else:
+            print('you cannot go there')        
     else:
         print('you cannot go there')
 
