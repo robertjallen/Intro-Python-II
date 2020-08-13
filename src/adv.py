@@ -27,11 +27,11 @@ earlier adventurers. The only exit is to the south."""),
 room['outside'].n_to = room['foyer'] #goes from outside to foyer
 room['foyer'].s_to = room['outside'] #goes from foyer to outside
 room['foyer'].n_to = room['overlook'] #goes from the foyer to the overlook
-room['foyer'].e_to = room['narrow']
-room['overlook'].s_to = room['foyer']
-room['narrow'].w_to = room['foyer']
-room['narrow'].n_to = room['treasure']
-room['treasure'].s_to = room['narrow']
+room['foyer'].e_to = room['narrow']   #goes from the foyer to the narrow
+room['overlook'].s_to = room['foyer'] #goes from the overlook to the foyer 
+room['narrow'].w_to = room['foyer']   #goes from the narrow to the foyer
+room['narrow'].n_to = room['treasure'] #goes from the narrow to the treasure
+room['treasure'].s_to = room['narrow'] #goes from the treasure to the narrow
 
 #
 # Main
@@ -63,7 +63,12 @@ while True:
         if hasattr(player.location, 'w_to'):
             player.location = player.location.w_to
         else:
-            print('you cannot go there')        
+            print('you cannot go there')
+    elif location == 'e':
+        if hasattr(player.location, 'e_to'):
+            player.location = player.location.e_to
+        else:
+            print('you cannot go there')                
     else:
         print('you cannot go there')
 
