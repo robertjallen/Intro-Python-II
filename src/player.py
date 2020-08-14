@@ -7,4 +7,4 @@ class Player:
     self.location = location
 
   def __str__(self):
-    return f'{self.name}'  
+    return f'{self.name} you are in {self.location}'  
